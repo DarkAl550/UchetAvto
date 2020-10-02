@@ -1,0 +1,10 @@
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\bin\Debug\UchetAvto.exe.config
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\bin\Debug\UchetAvto.exe
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\bin\Debug\UchetAvto.pdb
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\obj\Debug\UchetAvto.csprojAssemblyReference.cache
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\obj\Debug\UchetAvto.Form1.resources
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\obj\Debug\UchetAvto.Properties.Resources.resources
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\obj\Debug\UchetAvto.csproj.GenerateResource.cache
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\obj\Debug\UchetAvto.csproj.CoreCompileInputs.cache
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\obj\Debug\UchetAvto.exe
+C:\Users\alxan\OneDrive\Рабочий стол\DEV\CSharp\UchetAvto\obj\Debug\UchetAvto.pdb

@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{07B020E2-53B5-49FE-A020-CD904DB6E098}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Login.cs">
+    <Files>
+      <File FileName="Login.cs" Line="31" Column="55" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="DataManager.cs" Line="33" Column="30" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="UchetAvto" expanded="True">
+            <Node name="UchetAvto" expanded="True">
+              <Node name="Login.cs" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.UchetAvto PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

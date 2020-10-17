@@ -16,7 +16,7 @@ namespace UchetAvto
         public Login()
         {
             InitializeComponent();
-            cbType.Items.AddRange(new string[] { "Owner", "Manager", "Driver" });
+            cbType.Items.AddRange(new string[] { "Admin", "Manager", "Driver" });
             cbType.SelectedIndex = 0;
         }
         #region Validating
@@ -33,8 +33,8 @@ namespace UchetAvto
         }
         private bool CheckType(string type)
         {
-            if (type == "Owner" || type == "Manager" || type == "Driver") return true;
-            else MessageBox.Show("Данный тип пользователя не сущуствует!"); return false;
+            if (type == "Admin" || type == "Manager" || type == "Driver") return true;
+            else MessageBox.Show("Данный тип пользователя не сущуствует!\nВыберите тип из предложенных."); return false;
         }
         #endregion
         private void btnLogin_Click(object sender, EventArgs e)

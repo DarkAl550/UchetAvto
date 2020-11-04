@@ -1,5 +1,5 @@
-CREATE TABLE [Марка топлива] (
+CREATE TABLE [Oil Marks] (
 	Id INT PRIMARY KEY,
-    [Марка топлива] TEXT,
-    Стоимость FLOAT
+    [Oil mark] TEXT,
+    Price FLOAT
 );

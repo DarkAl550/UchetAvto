@@ -3,5 +3,5 @@ CREATE TABLE Users (
     Email TEXT,
     Pass TEXT,
 	Username TEXT,
-	“ип TEXT
+	UserType TEXT
 );

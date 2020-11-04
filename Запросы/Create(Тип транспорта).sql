@@ -1,4 +1,4 @@
-CREATE TABLE [Тип Транспорта] (
+CREATE TABLE [Car Type] (
 	ID INT PRIMARY KEY,
-	[Тип транспорта] TEXT
+	[Car Type] TEXT
 );

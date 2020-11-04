@@ -1,10 +1,10 @@
-CREATE TABLE Маршруты (
-    [№ Маршрута] INT NOT NULL PRIMARY KEY,
-    [Пункт отправки] TEXT,
-    [Пункт прибытия] TEXT,
-    [Дата отправки] DATE,
-	[Дата прибытия] DATE,
-	Расстояние FLOAT,
-	[Примерный расход] FLOAT,
-	[Время отдыха] TIME,
+CREATE TABLE Marshruts (
+    [ID] INT NOT NULL PRIMARY KEY,
+    [From] TEXT,
+    [To] TEXT,
+    [Date Start] DATE,
+	[Date End] DATE,
+	[Length] FLOAT,
+	[Oils lost] FLOAT,
+	[Time to sleep] TIME,
 );

@@ -1,10 +1,10 @@
-CREATE TABLE Водители (
+CREATE TABLE Drivers (
     Id INT NOT NULL PRIMARY KEY,
-    Фамилия TEXT,
-    Имя TEXT,
-    Отчество TEXT,
-	[Дата рождения] DATE,
-	[Стаж работы] FLOAT,
-	Оклад FLOAT,
-	Категории TEXT
+    LastName TEXT,
+    FirstName TEXT,
+    AfterName TEXT,
+	DateBorn DATE,
+	WorkTime FLOAT,
+	Currency FLOAT,
+	Category TEXT
 );

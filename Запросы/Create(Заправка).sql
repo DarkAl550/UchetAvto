@@ -1,8 +1,8 @@
-CREATE TABLE Заправка (
+CREATE TABLE Oils (
 	Id INT PRIMARY KEY,
-    [№ путевого листа] INTEGER REFERENCES [Путевые листы](Id),
-    [№ чека] INT,
-	[Время заправки] TIME,
-	[Марка топлива] INTEGER REFERENCES [Марка топлива](Id),
-	Количество FLOAT
+    [List] INTEGER REFERENCES [List](Id),
+    [Check Number] INT,
+	[Time] TIME,
+	[OilMarks] INTEGER REFERENCES [Oil Marks](Id),
+	[Value] FLOAT
 );

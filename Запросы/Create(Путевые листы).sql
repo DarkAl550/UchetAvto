@@ -1,11 +1,11 @@
-CREATE TABLE [Путевые листы] (
+CREATE TABLE [Lists] (
 	Id INT PRIMARY KEY,
-    [Транспорт] INTEGER REFERENCES Транспорт(Id),
-    Водитель INTEGER REFERENCES Водители(Id),
-	[Дата выезда] DATE,
-	[Дата возврата] DATE,
-	[Количество топлива при отправке] FLOAT,
-	[Количество топлива по возвращении] FLOAT,
-	Маршрут INTEGER REFERENCES Маршруты([№ Маршрута]) ,
-	[Масса груза] FLOAT
+    [Car] INTEGER REFERENCES [Car](Id),
+    Driver INTEGER REFERENCES Drivers(Id),
+	[Date Start] DATE,
+	[Date End] DATE,
+	[Start Oils] FLOAT,
+	[End Oils] FLOAT,
+	Marshrut INTEGER REFERENCES Marshruts([ID]) ,
+	[Mass] FLOAT
 );

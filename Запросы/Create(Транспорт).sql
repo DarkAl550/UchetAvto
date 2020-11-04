@@ -1,16 +1,16 @@
-CREATE TABLE [Транспорт] (
+CREATE TABLE [Car] (
 	Id INT PRIMARY KEY,
-    [Название транспорта] TEXT,
-    Марка TEXT,
-	[Тип транспорта] INTEGER REFERENCES [Тип транспорта](ID),
-	Организация TEXT,
-	Колонна TEXT,
-	[Год выпуска] INT,
-	[Гос номер] TEXT,
-	[№ двигателя] TEXT,
-	[№ кузова] TEXT,
-	[Максимальная скорость] FLOAT,
-	Грузоподъемноть FLOAT,
-	[Марка топлива] INTEGER REFERENCES [Марка топлива](Id),
-	[Средний расход топлива] FLOAT
+    [Name Car] TEXT,
+    [Marks] TEXT,
+	[Car Type] INTEGER REFERENCES [Car Type](ID),
+	Org TEXT,
+	Colonna TEXT,
+	[Date release] INT,
+	[Car Number] TEXT,
+	[Motor Number] TEXT,
+	[Kuzov Number] TEXT,
+	[Tech Status] FLOAT,
+	[Max Speed] FLOAT,
+	[Oil Marks] INTEGER REFERENCES [Oil Marks](Id),
+	[Oils Lost] FLOAT
 );

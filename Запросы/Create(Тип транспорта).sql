@@ -1,4 +1,4 @@
 CREATE TABLE [Car Type] (
-	ID INT PRIMARY KEY,
+	Id INT PRIMARY KEY,
 	[Car Type] TEXT
 );

@@ -13,7 +13,6 @@ namespace UchetAvto
 {
     public partial class Login : Form
     {
-        public static string connstr = "Data Source=DESKTOP-SJBK3TL\\TRANSBD;Initial Catalog=UchetAvto;Persist Security Info=True;User ID=DBC;Password=12345";//conection string
         public Login()
         {
             InitializeComponent();
@@ -23,21 +22,23 @@ namespace UchetAvto
         #region Validating
         private bool CheckUser(string email, string password, string type)
         {
-            Datatable datatable = new Datatable();
-            datatable.DataGridViewRow(email, password, type);
-            return true;
+            DataLogic dl = new DataLogic();
+            return dl.CheckUser(email, email, password, type); ;
         }
+
         private bool CheckEmail(string email)
         {
             if (email.Contains("@") && email.Contains(".")) return true;
             else MessageBox.Show("Неверный формат Email!\nПроверьте правильность введенных данных!"); return false;
         }
+
         private bool CheckType(string type)
         {
             if (type == "Admin" || type == "Manager" || type == "Driver") return true;
             else MessageBox.Show("Данный тип пользователя не сущуствует!\nВыберите тип из предложенных."); return false;
         }
         #endregion
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Main main = new Main();
@@ -45,20 +46,14 @@ namespace UchetAvto
             string email = tbEmail.Text;
             string password = tbPassword.Text;
             string type = cbType.Text;
-            if (CheckEmail(email) && CheckType(type) && CheckUser(email, password, type))
+            if (CheckType(type) && CheckUser(email, password, type))
             {
+
                 main.Show(); 
                 login.Hide();
             }
             else MessageBox.Show("Ошибка входа!");
 
-            /* SQL QUERY */
-            SqlConnection conn = new SqlConnection(connstr);
-            conn.Open();
-            SqlCommand comm = new SqlCommand("SELECT Username FROM Users", conn);
-            SqlDataReader read = comm.ExecuteReader();
-            read.Read();
-            MessageBox.Show(read["Username"].ToString());
 
         }
     }

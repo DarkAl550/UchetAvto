@@ -1,5 +1,5 @@
 CREATE TABLE Marshruts (
-    [ID] INT NOT NULL PRIMARY KEY,
+    [Id] INT NOT NULL PRIMARY KEY,
     [From] TEXT,
     [To] TEXT,
     [Date Start] DATE,

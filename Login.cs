@@ -13,6 +13,7 @@ namespace UchetAvto
 {
     public partial class Login : Form
     {
+        public static string connstr = "Data Source=DESKTOP-SJBK3TL\\TRANSBD;Initial Catalog=UchetAvto;Persist Security Info=True;User ID=DBC;Password=12345";//conection string
         public Login()
         {
             InitializeComponent();
@@ -50,6 +51,15 @@ namespace UchetAvto
                 login.Hide();
             }
             else MessageBox.Show("Ошибка входа!");
+
+            /* SQL QUERY */
+            SqlConnection conn = new SqlConnection(connstr);
+            conn.Open();
+            SqlCommand comm = new SqlCommand("SELECT Username FROM Users", conn);
+            SqlDataReader read = comm.ExecuteReader();
+            read.Read();
+            MessageBox.Show(read["Username"].ToString());
+
         }
     }
 }

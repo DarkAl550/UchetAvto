@@ -45,5 +45,16 @@ namespace UchetAvto.Properties {
                 return ((string)(this["UchetAvtoConnection"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-SJBK3TL\\TRANSBD;Initial Catalog=UchetAvto;Persist Security In" +
+            "fo=True;User ID=DBC;Password=12345")]
+        public string UchetAvtoConnectionString1 {
+            get {
+                return ((string)(this["UchetAvtoConnectionString1"]));
+            }
+        }
     }
 }

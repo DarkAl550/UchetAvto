@@ -6,6 +6,6 @@ CREATE TABLE [Lists] (
 	[Date End] DATE,
 	[Start Oils] FLOAT,
 	[End Oils] FLOAT,
-	Marshrut INTEGER REFERENCES Marshruts([ID]) ,
+	Marshrut INTEGER REFERENCES Marshruts([Id]) ,
 	[Mass] FLOAT
 );

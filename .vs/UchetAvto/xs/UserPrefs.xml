@@ -1,19 +1,18 @@
 ﻿<Properties StartupConfiguration="{07B020E2-53B5-49FE-A020-CD904DB6E098}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DatabaseManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DataLogic.cs">
     <Files>
       <File FileName="Login.cs" Line="19" Column="45" />
-      <File FileName="DataManager.cs" Line="14" Column="74" />
       <File FileName="DatabaseManager.cs" Line="13" Column="31" />
-      <File FileName="Program.cs" Line="20" Column="13" />
-      <File FileName="DataLogic.cs" Line="26" Column="10" />
+      <File FileName="DataManager.cs" Line="14" Column="61" />
+      <File FileName="DataObjects.cs" Line="4" Column="29" />
+      <File FileName="DataLogic.cs" Line="62" Column="53" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UchetAvto" expanded="True">
             <Node name="UchetAvto" expanded="True">
-              <Node name="DatabaseManager.cs" selected="True" />
-              <Node name="Main.cs" expanded="True" />
+              <Node name="DataLogic.cs" selected="True" />
             </Node>
           </Node>
         </State>

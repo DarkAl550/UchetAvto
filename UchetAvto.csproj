@@ -196,6 +196,7 @@
     </None>
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="DataLogic.cs" />
+    <Compile Include="DataObjects.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,5 +1,5 @@
 CREATE TABLE [Oil Marks] (
 	Id INT PRIMARY KEY,
-    [Oil mark] TEXT,
+    [Oil Mark] TEXT,
     Price FLOAT
 );

@@ -16,7 +16,6 @@ namespace UchetAvto
             ConnOpen();
             SqlCommand command = new SqlCommand($"SELECT * FROM [{table}] {parametrs}", SqlConnection());
             SqlDataReader read = command.ExecuteReader();
-            ConnClosed();
             return read;
 
         }

@@ -6,7 +6,8 @@ namespace UchetAvto
     public class DatabaseManager
     {
         /* !!!EDIT SERVER PATH !!! */
-        public static string connPath = "Data Source=DESKTOP-SJBK3TL\\TRANSBD;Initial Catalog=UchetAvto;Persist Security Info=True;User ID=DBC;Password=12345";//conection string
+        //Data Source=DESKTOP-AV9ETF8;Initial Catalog=UchetAvto;Integrated Security=True
+        public static string connPath = "Data Source=DESKTOP-AV9ETF8;Initial Catalog=UchetAvto;Integrated Security=True";//conection string
 
         SqlConnection conn = new SqlConnection(connPath);
 

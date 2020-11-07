@@ -9,21 +9,17 @@ namespace UchetAvto
 
         public bool CheckUser(string username, string email, string password, string type)
         {
-            string parametrs = $"WHERE Username = '{username}' OR Email = '{email}' AND Pass = '{password}' AND UserType = '{type}";
+            string parametrs = $"WHERE Username LIKE '{username}' OR Email LIKE '{email}' AND Pass LIKE '{password}' AND UserType LIKE '{type}'";
             SqlDataReader getUser = SelectValues("Users", parametrs);
-
-            if (getUser.Read())
+            while (getUser.Read())
             {
-                getUser.Close();
-                ConnClosed();
-                return true;
+                if (getUser["Username"].ToString() == username && getUser["Pass"].ToString() == password) return true;
+                else return false;
             }
-            else
-            {
-                getUser.Close();
-                ConnClosed();
-                return false;
-            }
+            return false;
+            
+            
+            
 
         }
 

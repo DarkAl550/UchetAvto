@@ -42,15 +42,14 @@ namespace UchetAvto
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Main main = new Main();
-            Login login = new Login();
             string email = tbEmail.Text;
             string password = tbPassword.Text;
             string type = cbType.Text;
             if (CheckType(type) && CheckUser(email, password, type))
             {
-
+                main.TYPE = type;
                 main.Show(); 
-                login.Hide();
+                Hide();
             }
             else MessageBox.Show("Ошибка входа!");
 

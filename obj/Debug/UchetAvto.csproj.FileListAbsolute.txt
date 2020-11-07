@@ -46,3 +46,16 @@ C:/Users/nickz/Desktop/UchetAvto/obj/Debug/UchetAvto.pdb
 /home/alexander/Рабочий стол/Курсач БД/UchetAvto/obj/Debug/UchetAvto.csproj.CoreCompileInputs.cache
 /home/alexander/Рабочий стол/Курсач БД/UchetAvto/obj/Debug/UchetAvto.exe
 /home/alexander/Рабочий стол/Курсач БД/UchetAvto/obj/Debug/UchetAvto.pdb
+C:\Users\alxan\Desktop\Kursach\UchetAvto\bin\Debug\UchetAvto.exe.config
+C:\Users\alxan\Desktop\Kursach\UchetAvto\bin\Debug\UchetAvto.exe
+C:\Users\alxan\Desktop\Kursach\UchetAvto\bin\Debug\UchetAvto.pdb
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.csprojAssemblyReference.cache
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.Datatable.resources
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.Lists.resources
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.Login.resources
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.Properties.Resources.resources
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.csproj.GenerateResource.cache
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.csproj.CoreCompileInputs.cache
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.exe
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.pdb
+C:\Users\alxan\Desktop\Kursach\UchetAvto\obj\Debug\UchetAvto.Main.resources

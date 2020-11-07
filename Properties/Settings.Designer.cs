@@ -56,5 +56,15 @@ namespace UchetAvto.Properties {
                 return ((string)(this["UchetAvtoConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-AV9ETF8;Initial Catalog=UchetAvto;Integrated Security=True")]
+        public string UchetAvtoConnectionString2 {
+            get {
+                return ((string)(this["UchetAvtoConnectionString2"]));
+            }
+        }
     }
 }

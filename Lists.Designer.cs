@@ -32,6 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.uchetAvtoDataSet2 = new UchetAvto.UchetAvtoDataSet2();
             this.uchetAvtoDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchetAvtoDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uchetAvtoDataSet2BindingSource)).BeginInit();
@@ -42,7 +43,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(775, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(775, 338);
             this.dataGridView1.TabIndex = 0;
             // 
             // uchetAvtoDataSet2
@@ -55,11 +56,22 @@
             this.uchetAvtoDataSet2BindingSource.DataSource = this.uchetAvtoDataSet2;
             this.uchetAvtoDataSet2BindingSource.Position = 0;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(355, 396);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 1;
+            this.btnBack.Text = "Вернуться";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Lists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Lists";
             this.Text = "Путевые листы";
@@ -76,6 +88,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private UchetAvtoDataSet2 uchetAvtoDataSet2;
         private System.Windows.Forms.BindingSource uchetAvtoDataSet2BindingSource;
+        private System.Windows.Forms.Button btnBack;
     }
 }
 

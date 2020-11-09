@@ -6,6 +6,7 @@ namespace UchetAvto
         //table "Lists"
         public class PutLists
         {
+            //9
             public string Id;
             public string CarId;
             public string DriverId;
@@ -19,6 +20,7 @@ namespace UchetAvto
         //table "Drivers"
         public class Drivers
         {
+            //8
             public string Id;
             public string LastName;
             public string FirstName;
@@ -31,6 +33,7 @@ namespace UchetAvto
         //table "Oils"
         public class Oils
         {
+            //6
             public string Id;
             public string ListId;
             public string Check_Number;
@@ -41,6 +44,7 @@ namespace UchetAvto
         //table "Oil Marks"
         public class Oil_Marks
         {
+            //3
             public string Id;
             public string Oil_Mark;
             public string Price;
@@ -48,6 +52,7 @@ namespace UchetAvto
         //table "Marshruts"
         public class Marshruts
         {
+            //8
             public string Id;
             public string From;
             public string To;
@@ -66,6 +71,7 @@ namespace UchetAvto
         //table "Car"
         public class Car
         {
+            //14
             public string Id;
             public string Name_Car;
             public string Marks;

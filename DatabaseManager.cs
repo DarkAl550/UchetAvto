@@ -6,8 +6,8 @@ namespace UchetAvto
     public class DatabaseManager
     {
         /* !!!EDIT SERVER PATH !!! */
-        //Data Source=DESKTOP-AV9ETF8;Initial Catalog=UchetAvto;Integrated Security=True
-        public static string connPath = "Data Source=DESKTOP-AV9ETF8;Initial Catalog=UchetAvto;Integrated Security=True";//conection string
+        //Data Source=HOME-PC\SQLEXPRESS;Initial Catalog=UchetAvto;Integrated Security=True
+        public static string connPath = "Data Source=HOME-PC\\SQLEXPRESS;Initial Catalog=UchetAvto;Integrated Security=True";//conection string
 
         SqlConnection conn = new SqlConnection(connPath);
 

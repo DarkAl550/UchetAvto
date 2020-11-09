@@ -17,16 +17,12 @@ namespace UchetAvto
                 else return false;
             }
             return false;
-            
-            
-            
 
         }
-
-        public List<DataObjects.PutLists> GetPutLists()
+        public List<DataObjects.PutLists> GetPutLists(string parameters)
         {
             DataObjects.PutLists pl = new DataObjects.PutLists();
-            SqlDataReader getLists = SelectValues("Lists", "");
+            SqlDataReader getLists = SelectValues("Lists", parameters);
             List<DataObjects.PutLists> lists = new List<DataObjects.PutLists>();
             while (getLists.Read())
             {
@@ -45,12 +41,13 @@ namespace UchetAvto
             return lists;
         }
 
-        public List<DataObjects.Car> GetCars() {
-            DataObjects.Car car = new DataObjects.Car();
+        public List<DataObjects.Car> GetCars(string parameters) {
+            
             List<DataObjects.Car> cars = new List<DataObjects.Car>();
-            SqlDataReader getCars = SelectValues("Cars", "");
+            SqlDataReader getCars = SelectValues("Cars", parameters);
             while (getCars.Read())
             {
+                DataObjects.Car car = new DataObjects.Car();
                 car.Id = getCars["Id"].ToString();
                 car.Name_Car = getCars["Name Car"].ToString();
                 car.Marks = getCars["Marks"].ToString();
@@ -65,10 +62,48 @@ namespace UchetAvto
                 car.Max_Speed = getCars["Max Speed"].ToString();
                 car.OilMarksId = getCars["Oil Marks"].ToString();
                 car.Oils_Lost = getCars["Oils Lost"].ToString();
+                cars.Add(car);
             }
             getCars.Close();
             return cars;
         }
 
+        public List<DataObjects.Drivers> GetDrivers(string parameters)
+        {
+           
+            List<DataObjects.Drivers> drivers = new List<DataObjects.Drivers>();
+            SqlDataReader getDrivers = SelectValues("Drivers", parameters);
+            while (getDrivers.Read())
+            {
+                DataObjects.Drivers driver = new DataObjects.Drivers();
+                driver.Id = getDrivers["Id"].ToString();
+                driver.LastName = getDrivers["LastName"].ToString();
+                driver.FirstName = getDrivers["FirstName"].ToString();
+                driver.AfterName = getDrivers["AfterName"].ToString();
+                driver.DateBorn = getDrivers["DateBorn"].ToString();
+                driver.WorkTime = getDrivers["WorkTime"].ToString();
+                driver.Currency = getDrivers["Currency"].ToString();
+                driver.Category = getDrivers["Category"].ToString();
+                drivers.Add(driver);
+            }
+            getDrivers.Close();
+            return drivers;
+        }
+
+        public List<DataObjects.Car_Type> getCarTypes(string parameters)
+        {
+            
+            List<DataObjects.Car_Type> car_types = new List<DataObjects.Car_Type>();
+            SqlDataReader getTypes = SelectValues("Car Type", parameters);
+            while (getTypes.Read())
+            {
+                DataObjects.Car_Type car_type = new DataObjects.Car_Type();
+                car_type.Id = getTypes["Id"].ToString();
+                car_type.CarType = getTypes["Car Type"].ToString();
+                car_types.Add(car_type);
+            }
+            getTypes.Close();
+            return car_types;
+        }
     }
 }

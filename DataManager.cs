@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,15 @@ namespace UchetAvto
 
         }
 
-        public void InsertValuses(string table, string[] columns, string[] values)
+        public void InsertValuses(string table, string columns, string values, int id)
         {
             ConnOpen();
-            string inserting = $"INSERT INTO [{table}]({String.Join(",", columns)}) VALUES({String.Join(",", values)})";
+            string inserting = $"INSERT INTO [{table}]({columns}) VALUES(@id, {values})";
             SqlCommand command = new SqlCommand(inserting, SqlConnection());
+            command.Parameters.Add("@id", SqlDbType.VarChar).Value = id;
+            int result = command.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Error inserting data into Database!");
             ConnClosed();
         }
 

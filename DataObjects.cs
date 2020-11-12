@@ -87,6 +87,16 @@ namespace UchetAvto
             public string OilMarksId;
             public string Oils_Lost;
         }
-
+        //table "Users"
+        public class Users
+        {
+            //5
+            public string Id;
+            public string Email;
+            public string Pass;
+            public string Username;
+            public string UserType;
+        }
+        
     }
 }

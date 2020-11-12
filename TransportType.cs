@@ -44,8 +44,8 @@ namespace UchetAvto
 
         private void TransportType_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Login l = new Login();
-            l.Close();
+            Main m = new Main();
+            m.Show();
             
         }
     }

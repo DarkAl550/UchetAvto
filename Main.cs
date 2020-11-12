@@ -104,5 +104,45 @@ namespace UchetAvto
             Hide();
 
         }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Users u = new Users();
+            u.Show();
+            Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Transport t = new Transport();
+            t.Show();
+            Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Программа UchetAvto разработана для учета автотранспортных средств.\nДля отображения необходимых данных неообходимо нажать кнопку \"Показать\" под соответствующим указанием.\nДля создания новой записи в таблице необходимо нажать на кнопку \"Создать\" или \"Добавить\" под сопутствующим указанием.\nПриятного пользования!","Помощь");
+
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateNew cn = new CreateNew();
+            cn.tab = "Транспорт";
+            cn.Show();
+            Hide();
+        }
+
+        private void btnViewMarshruts_Click(object sender, EventArgs e)
+        {
+            Marshruts m = new Marshruts();
+            m.Show();
+            Hide();
+        }
     }
 }

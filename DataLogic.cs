@@ -13,12 +13,13 @@ namespace UchetAvto
             SqlDataReader getUser = SelectValues("Users", parametrs);
             while (getUser.Read())
             {
-                if (getUser["Username"].ToString() == username && getUser["Pass"].ToString() == password) return true;
+                if (getUser["Username"].ToString() == username && getUser["Pass"].ToString() == password && getUser["UserType"].ToString() == type) return true;
                 else return false;
             }
             return false;
 
         }
+
         public List<DataObjects.PutLists> GetPutLists(string parameters)
         {
             DataObjects.PutLists pl = new DataObjects.PutLists();
@@ -44,7 +45,7 @@ namespace UchetAvto
         public List<DataObjects.Car> GetCars(string parameters) {
             
             List<DataObjects.Car> cars = new List<DataObjects.Car>();
-            SqlDataReader getCars = SelectValues("Cars", parameters);
+            SqlDataReader getCars = SelectValues("Car", parameters);
             while (getCars.Read())
             {
                 DataObjects.Car car = new DataObjects.Car();
@@ -54,9 +55,9 @@ namespace UchetAvto
                 car.CarTypeId = getCars["Car Type"].ToString();
                 car.Org = getCars["Org"].ToString();
                 car.Colonna = getCars["Colonna"].ToString();
-                car.Date_realese = getCars["Date realease"].ToString();
+                car.Date_realese = getCars["Date release"].ToString();
                 car.Car_Number = getCars["Car Number"].ToString();
-                car.Motor_Number = getCars["Motor Minber"].ToString();
+                car.Motor_Number = getCars["Motor Number"].ToString();
                 car.Kuzov_Number = getCars["Kuzov Number"].ToString();
                 car.Tech_Status = getCars["Tech Status"].ToString();
                 car.Max_Speed = getCars["Max Speed"].ToString();
@@ -104,6 +105,62 @@ namespace UchetAvto
             }
             getTypes.Close();
             return car_types;
+        }
+
+        public List<DataObjects.Users> GetUsers(string parameters)
+        {
+            List<DataObjects.Users> users = new List<DataObjects.Users>();
+            SqlDataReader getUsers = SelectValues("Users", parameters);
+            while (getUsers.Read())
+            {
+                DataObjects.Users user = new DataObjects.Users();
+                user.Id = getUsers["Id"].ToString();
+                user.Email = getUsers["Email"].ToString();
+                user.Pass = getUsers["Pass"].ToString();
+                user.Username = getUsers["Username"].ToString();
+                user.UserType = getUsers["UserType"].ToString();
+                users.Add(user);
+            }
+            getUsers.Close();
+            return users;
+        }
+
+        public List<DataObjects.Marshruts> GetMarshruts(string parameters)
+        {
+            List<DataObjects.Marshruts> marshruts = new List<DataObjects.Marshruts>();
+            SqlDataReader getMarshrut = SelectValues("Marshruts", parameters);
+            while (getMarshrut.Read())
+            {
+                DataObjects.Marshruts marshrut = new DataObjects.Marshruts();
+                marshrut.Id = getMarshrut["Id"].ToString();
+                marshrut.From = getMarshrut["From"].ToString();
+                marshrut.To = getMarshrut["To"].ToString();
+                marshrut.Date_Start = getMarshrut["Date Start"].ToString();
+                marshrut.Date_End = getMarshrut["Date End"].ToString();
+                marshrut.Length = getMarshrut["Length"].ToString();
+                marshrut.Oils_lost = getMarshrut["Oils lost"].ToString();
+                marshrut.Time_to_sleep = getMarshrut["Time to sleep"].ToString();
+                marshruts.Add(marshrut);
+            }
+            getMarshrut.Close();
+            return marshruts;
+        }
+
+        public List<DataObjects.Oil_Marks> GetOilsMarks(string parameters)
+        {
+            List<DataObjects.Oil_Marks> oil_marks = new List<DataObjects.Oil_Marks>();
+            SqlDataReader getMarshrut = SelectValues("Oil Marks", parameters);
+            while (getMarshrut.Read())
+            {
+                DataObjects.Oil_Marks om = new DataObjects.Oil_Marks();
+                om.Id = getMarshrut["Id"].ToString();
+                om.Oil_Mark = getMarshrut["Oil Mark"].ToString();
+                om.Price = getMarshrut["Price"].ToString();
+
+                oil_marks.Add(om);
+            }
+            getMarshrut.Close();
+            return oil_marks;
         }
     }
 }

@@ -46,7 +46,7 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(55, 164);
+            this.tbPassword.Location = new System.Drawing.Point(57, 164);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(225, 20);
             this.tbPassword.TabIndex = 1;
@@ -54,8 +54,9 @@
             // 
             // cbType
             // 
+            this.cbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(56, 212);
+            this.cbType.Location = new System.Drawing.Point(57, 212);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(225, 21);
             this.cbType.TabIndex = 2;
@@ -73,27 +74,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(54, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Email or Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 148);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(54, 148);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Password";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 196);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(54, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Type";
             // 
@@ -101,6 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(328, 361);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -110,7 +115,8 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbEmail);
             this.Name = "Login";
-            this.Text = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

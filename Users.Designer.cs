@@ -1,6 +1,6 @@
 ﻿namespace UchetAvto
 {
-    partial class Drivers
+    partial class Users
     {
         /// <summary>
         /// Required designer variable.
@@ -38,19 +38,19 @@
             this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(13, 13);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(539, 205);
+            this.dataGridView1.Size = new System.Drawing.Size(496, 197);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Drivers
+            // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 253);
+            this.ClientSize = new System.Drawing.Size(543, 245);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Drivers";
-            this.Text = "Drivers";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Drivers_FormClosed);
-            this.Load += new System.EventHandler(this.Drivers_Load);
+            this.Name = "Users";
+            this.Text = "Users";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Users_FormClosed);
+            this.Load += new System.EventHandler(this.Users_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

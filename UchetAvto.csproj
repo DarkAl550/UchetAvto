@@ -150,11 +150,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UchetAvtoDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreateNew.resx">
       <DependentUpon>CreateNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Datatable.resx">
       <DependentUpon>Datatable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drivers.resx">
+      <DependentUpon>Drivers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lists.resx">
       <DependentUpon>Lists.cs</DependentUpon>
@@ -165,6 +174,9 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Marshruts.resx">
+      <DependentUpon>Marshruts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -174,8 +186,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transport.resx">
+      <DependentUpon>Transport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransportType.resx">
       <DependentUpon>TransportType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Drivers.datasource" />
     <None Include="Properties\DataSources\Lists.datasource" />

@@ -74,3 +74,7 @@ C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.exe
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.pdb
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.TransportType.resources
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.CreateNew.resources
+C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Users.resources
+C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Drivers.resources
+C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Transport.resources
+C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Marshruts.resources

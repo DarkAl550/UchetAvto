@@ -62,9 +62,8 @@ namespace UchetAvto
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CreateNew cn = new CreateNew();
-            cn.tab = "Путевые листы";
-            cn.Show();
+            NewLists nl = new NewLists();
+            nl.Show();
             Hide();
 
         }
@@ -80,9 +79,9 @@ namespace UchetAvto
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CreateNew cn = new CreateNew();
-            cn.tab = "Маршруты";
-            cn.Show();
+            NewMarshrut nm = new NewMarshrut();
+            nm.tab = "Маршруты";
+            nm.Show();
             Hide();
 
         }
@@ -132,9 +131,8 @@ namespace UchetAvto
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CreateNew cn = new CreateNew();
-            cn.tab = "Транспорт";
-            cn.Show();
+            NewCar c = new NewCar();
+            c.Show();
             Hide();
         }
 
@@ -143,6 +141,11 @@ namespace UchetAvto
             Marshruts m = new Marshruts();
             m.Show();
             Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
         }
     }
 }

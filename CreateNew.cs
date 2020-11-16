@@ -80,9 +80,6 @@ namespace UchetAvto
                     comboBox1.Items.AddRange(new string[] { "Admin", "Manager", "Driver" });
                     comboBox1.SelectedIndex = 0;
                     break;
-                case "Транспорт":
-                    label1.Text = "Название";
-                    break;
                 default:
                     MessageBox.Show("Ошибка таблицы! Обратитесь к Администратору!");
                     Close();
@@ -146,6 +143,11 @@ namespace UchetAvto
             dm.InsertValuses("Users", String.Join(",", columns), String.Join(",", values), id);
             MessageBox.Show("Новый пользователь успешно добавлен!");
             Close();
+        }
+
+        private void InsertMarshrit()
+        {
+
         }
         
         private void InsertCar()

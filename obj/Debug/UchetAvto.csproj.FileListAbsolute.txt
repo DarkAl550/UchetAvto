@@ -78,3 +78,6 @@ C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Users.reso
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Drivers.resources
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Transport.resources
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Marshruts.resources
+C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.NewMarshrut.resources
+C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.NewLists.resources
+C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.NewCar.resources

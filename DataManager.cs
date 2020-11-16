@@ -15,7 +15,7 @@ namespace UchetAvto
         public SqlDataReader SelectValues(string table, string parametrs)
         {
             ConnOpen();
-            SqlCommand command = new SqlCommand($"SELECT * FROM [{table}] {parametrs}", SqlConnection());
+            SqlCommand command = new SqlCommand($"SELECT * FROM [{table}] {parametrs} ", SqlConnection());
             SqlDataReader read = command.ExecuteReader();
             return read;
 

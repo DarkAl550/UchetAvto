@@ -104,6 +104,24 @@
     <Compile Include="Marshruts.Designer.cs">
       <DependentUpon>Marshruts.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCar.Designer.cs">
+      <DependentUpon>NewCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewLists.Designer.cs">
+      <DependentUpon>NewLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewMarshrut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMarshrut.Designer.cs">
+      <DependentUpon>NewMarshrut.cs</DependentUpon>
+    </Compile>
     <Compile Include="Oils.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +194,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Marshruts.resx">
       <DependentUpon>Marshruts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCar.resx">
+      <DependentUpon>NewCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewLists.resx">
+      <DependentUpon>NewLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMarshrut.resx">
+      <DependentUpon>NewMarshrut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -261,9 +261,10 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Aqua;
+            this.button3.BackColor = System.Drawing.Color.Blue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button3.Location = new System.Drawing.Point(12, 13);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
@@ -287,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.PaleGreen;
             this.ClientSize = new System.Drawing.Size(358, 450);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

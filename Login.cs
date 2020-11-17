@@ -60,5 +60,10 @@ namespace UchetAvto
         {
             System.Environment.Exit(0);
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

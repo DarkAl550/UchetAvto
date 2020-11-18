@@ -115,7 +115,7 @@
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Black;
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkBlue;
             this.linkLabel1.Location = new System.Drawing.Point(121, 95);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(155, 13);
@@ -128,7 +128,7 @@
             // 
             this.linkLabel2.ActiveLinkColor = System.Drawing.Color.Black;
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel2.LinkColor = System.Drawing.Color.DarkBlue;
             this.linkLabel2.Location = new System.Drawing.Point(121, 157);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(145, 13);
@@ -141,7 +141,7 @@
             // 
             this.linkLabel3.ActiveLinkColor = System.Drawing.Color.Black;
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel3.LinkColor = System.Drawing.Color.DarkBlue;
             this.linkLabel3.Location = new System.Drawing.Point(121, 217);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(131, 13);
@@ -174,7 +174,7 @@
             // 
             this.linkLabel4.ActiveLinkColor = System.Drawing.Color.Black;
             this.linkLabel4.AutoSize = true;
-            this.linkLabel4.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel4.LinkColor = System.Drawing.Color.DarkBlue;
             this.linkLabel4.Location = new System.Drawing.Point(121, 271);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(107, 13);
@@ -207,7 +207,7 @@
             // 
             this.linkLabel5.ActiveLinkColor = System.Drawing.Color.Black;
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel5.LinkColor = System.Drawing.Color.DarkBlue;
             this.linkLabel5.Location = new System.Drawing.Point(121, 392);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(131, 13);
@@ -250,7 +250,7 @@
             // 
             this.linkLabel6.ActiveLinkColor = System.Drawing.Color.Black;
             this.linkLabel6.AutoSize = true;
-            this.linkLabel6.LinkColor = System.Drawing.Color.Red;
+            this.linkLabel6.LinkColor = System.Drawing.Color.DarkBlue;
             this.linkLabel6.Location = new System.Drawing.Point(121, 337);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(147, 13);
@@ -261,7 +261,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Blue;
+            this.button3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -313,7 +313,8 @@
             this.Controls.Add(this.btnViewList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
-            this.Text = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "UchetAvto";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);

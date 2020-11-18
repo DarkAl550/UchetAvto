@@ -199,7 +199,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "NewMarshrut";
-            this.Text = "NewMarshrut";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Добавление";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewMarshrut_FormClosed);
             this.Load += new System.EventHandler(this.NewMarshrut_Load);
             this.ResumeLayout(false);

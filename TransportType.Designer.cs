@@ -39,7 +39,7 @@
             this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(249, 267);
+            this.dataGridView1.Size = new System.Drawing.Size(275, 267);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -50,7 +50,8 @@
             this.ClientSize = new System.Drawing.Size(299, 303);
             this.Controls.Add(this.dataGridView1);
             this.Name = "TransportType";
-            this.Text = "TransportType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Тип транспорта";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TransportType_FormClosed);
             this.Load += new System.EventHandler(this.TransportType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

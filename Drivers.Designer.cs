@@ -48,7 +48,8 @@
             this.ClientSize = new System.Drawing.Size(566, 253);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Drivers";
-            this.Text = "Drivers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Водители";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Drivers_FormClosed);
             this.Load += new System.EventHandler(this.Drivers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

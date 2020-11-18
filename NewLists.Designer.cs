@@ -223,7 +223,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "NewLists";
-            this.Text = "NewLists";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Добавление";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewLists_FormClosed);
             this.Load += new System.EventHandler(this.NewLists_Load);
             this.ResumeLayout(false);

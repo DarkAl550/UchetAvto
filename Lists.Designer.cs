@@ -63,6 +63,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Lists";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Путевые листы";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Lists_FormClosed);
             this.Load += new System.EventHandler(this.Lists_Load);

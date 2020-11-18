@@ -321,7 +321,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "NewCar";
-            this.Text = "  ";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Добавление";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewCar_FormClosed);
             this.Load += new System.EventHandler(this.NewCar_Load);
             this.ResumeLayout(false);

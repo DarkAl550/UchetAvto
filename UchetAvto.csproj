@@ -68,12 +68,6 @@
       <DependentUpon>CreateNew.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManager.cs" />
-    <Compile Include="Datatable.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Datatable.Designer.cs">
-      <DependentUpon>Datatable.cs</DependentUpon>
-    </Compile>
     <Compile Include="Drivers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,9 +170,6 @@
     </Compile>
     <EmbeddedResource Include="CreateNew.resx">
       <DependentUpon>CreateNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Datatable.resx">
-      <DependentUpon>Datatable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers.resx">
       <DependentUpon>Drivers.cs</DependentUpon>

@@ -63,7 +63,6 @@ C:\Users\alexander\Desktop\Курсач\UchetAvto\bin\Debug\UchetAvto.exe.config
 C:\Users\alexander\Desktop\Курсач\UchetAvto\bin\Debug\UchetAvto.exe
 C:\Users\alexander\Desktop\Курсач\UchetAvto\bin\Debug\UchetAvto.pdb
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.csprojAssemblyReference.cache
-C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Datatable.resources
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Lists.resources
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Login.resources
 C:\Users\alexander\Desktop\Курсач\UchetAvto\obj\Debug\UchetAvto.Main.resources

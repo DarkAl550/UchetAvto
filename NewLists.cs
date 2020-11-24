@@ -12,13 +12,16 @@ namespace UchetAvto
 {
     public partial class NewLists : Form
     {
+        private string[] listCars;
+        private string[] listDrivers;
+        private string[] listMarshruts;
         List<DataObjects.Car> car = new List<DataObjects.Car>();
         List<DataObjects.Drivers> driver = new List<DataObjects.Drivers>();
         List<DataObjects.Marshruts> marshrut = new List<DataObjects.Marshruts>();
         List<DataObjects.PutLists> lists = new List<DataObjects.PutLists>();
         DataLogic dl = new DataLogic();
         DataManager dm = new DataManager();
-
+        Validate valid = new Validate();
         public NewLists()
         {
             InitializeComponent();
@@ -42,7 +45,7 @@ namespace UchetAvto
             string[] cars = new string[car.Count];
             for (int i = 0; i < car.Count; i++)
             {
-                cars[i] = car[i].Name_Car;
+                cars[i] = $"{car[i].Name_Car} ({car[i].Car_Number})";
             }
             
             return cars;
@@ -72,38 +75,69 @@ namespace UchetAvto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lists = dl.GetPutLists("");
-            string carId = dl.GetCars($"WHERE [Name Car] LIKE '{comboBox1.Text}'")[0].Id;
-            string driverId = dl.GetDrivers($"WHERE [LastName] LIKE '{comboBox2.Text.Split(' ')[0]}' AND [FirstName] LIKE '{comboBox2.Text.Split(' ')[1]}'")[0].Id;
-            string marshrutId = dl.GetMarshruts($"WHERE [From] LIKE '{comboBox3.Text.Split('-')[0]}' AND [To] LIKE '{comboBox3.Text.Split('-')[1]}'")[0].Id;
-            int id = Convert.ToInt32(lists.Count + 1);
-            string date_start = dateTimePicker1.Value.ToString();
-            string date_end = dateTimePicker2.Value.ToString();
-            string start_oils = textBox1.Text;
-            string end_oils = textBox2.Text;
-            string mass = textBox3.Text;
-            string[] columns = new string[] { "Id", "[Car]", "[Driver]", "[Date Start]", "[Date End]", "[Start Oils]", "[End Oils]", "[Marshrut]", "[Mass]" };
-            List<string> values = new List<string>();
-            values.Add($"{carId}");
-            values.Add($"{driverId}");
-            values.Add($"'{date_start}'");
-            values.Add($"'{date_end}'");
-            values.Add($"'{start_oils}'");  
-            values.Add($"'{end_oils}'");
-            values.Add($"{marshrutId}");
-            values.Add($"'{mass}'");
+            try
+            {
+                lists = dl.GetPutLists("");
+                string carId = (valid.CheckComboBoxValue(listCars, comboBox1.Text) == null) ? 
+                    throw new Exception($"Значения \"{comboBox1.Text}\" не существует в контексте \"Транспорт\"") 
+                    : dl.GetCars($"WHERE [Name Car] LIKE '{comboBox1.Text.Split(' ')[0]}'")[0].Id;
+                string driverId = (valid.CheckComboBoxValue(listDrivers, comboBox2.Text) == null) ? 
+                    throw new Exception($"Значения \"{comboBox2.Text}\" не существует в контексте \"Водитель\"") 
+                    : dl.GetDrivers($"WHERE [LastName] LIKE '{comboBox2.Text.Split(' ')[0]}' AND [FirstName] LIKE '{comboBox2.Text.Split(' ')[1]}'")[0].Id;
+                string marshrutId = (valid.CheckComboBoxValue(listMarshruts, comboBox3.Text) == null) ? 
+                    throw new Exception($"Значения \"{comboBox3.Text}\" не существует в контексте \"Маршрут\"") 
+                    : dl.GetMarshruts($"WHERE [From] LIKE '{comboBox3.Text.Split('-')[0]}' AND [To] LIKE '{comboBox3.Text.Split('-')[1]}'")[0].Id;
+                int id = Convert.ToInt32(lists.Count + 1);
+                string date_start = dateTimePicker1.Value.ToString();
+                string date_end = dateTimePicker2.Value.ToString();
+                string start_oils = (valid.CheckNumFields(textBox1.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Начальное количество топлива\""+
+                    "\n**поле может содержать только численное значение**\nПример: [120.0]") : textBox1.Text;
+                string end_oils = (valid.CheckNumFields(textBox2.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Конечное количество топлива\"" +
+                    "\n**поле может содержать только численное значение**\nПример: [120.0]") : textBox2.Text;
+                string mass = (valid.CheckNumFields(textBox2.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Масса\"" +
+                    "\n**поле может содержать только численное значение**\nПример: [20000]") : textBox3.Text;
+                string[] columns = new string[] { 
+                    "Id", 
+                    "[Car]", 
+                    "[Driver]", 
+                    "[Date Start]", 
+                    "[Date End]", 
+                    "[Start Oils]", 
+                    "[End Oils]", 
+                    "[Marshrut]", 
+                    "[Mass]" 
+                };
+                List<string> values = new List<string>
+                {
+                    $"{carId}",
+                    $"{driverId}",
+                    $"'{date_start}'",
+                    $"'{date_end}'",
+                    $"'{start_oils}'",
+                    $"'{end_oils}'",
+                    $"{marshrutId}",
+                    $"'{mass}'"
+                };
 
 
-            dm.InsertValuses("Lists", String.Join(",", columns), String.Join(",", values), id);
-            MessageBox.Show("Новый тип успешно добавлен!");
-            Close();
+                dm.InsertValuses("Lists", String.Join(",", columns), String.Join(",", values), id);
+                MessageBox.Show("Новый \"Путевой лист\" успешно добавлен!");
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void NewLists_Load(object sender, EventArgs e)
         {
-            string[] listCars = GetCars();
-            string[] listDrivers = GetDrivers();
-            string[] listMarshruts = GetMarshruts();
+            listCars = GetCars();
+            listDrivers = GetDrivers();
+            listMarshruts = GetMarshruts();
             comboBox1.Items.AddRange(listCars);
             comboBox2.Items.AddRange(listDrivers);
             comboBox3.Items.AddRange(listMarshruts);

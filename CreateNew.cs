@@ -16,18 +16,12 @@ namespace UchetAvto
     {
         DataManager dm = new DataManager();
         DataLogic dl = new DataLogic();
-        private List<string> values = new List<string>();
-       // private List<string> columns = new List<string>();
+        Validate valid = new Validate();
         private string[] columns;
-        
         public string tab;
+        private string[] cb1Values = { "Admin", "Manager", "Driver" };
         private List<DataObjects.Car_Type> car_Types = new List<DataObjects.Car_Type>();
-        private List<DataObjects.Car> cars = new List<DataObjects.Car>();
         private List<DataObjects.Drivers> drivers = new List<DataObjects.Drivers>();
-        private List<DataObjects.PutLists> lists = new List<DataObjects.PutLists>();
-        private List<DataObjects.Oils> oils = new List<DataObjects.Oils>();
-        private List<DataObjects.Marshruts> marshruts = new List<DataObjects.Marshruts>();
-        private List<DataObjects.Oil_Marks> oil_Marks = new List<DataObjects.Oil_Marks>();
         private List<DataObjects.Users> users = new List<DataObjects.Users>();
 
         public CreateNew()
@@ -77,7 +71,7 @@ namespace UchetAvto
                     label5.Visible = true;
                     label5.Text = "Тип";
                     comboBox1.Visible = true;
-                    comboBox1.Items.AddRange(new string[] { "Admin", "Manager", "Driver" });
+                    comboBox1.Items.AddRange(cb1Values);
                     comboBox1.SelectedIndex = 0;
                     break;
                 default:
@@ -90,85 +84,119 @@ namespace UchetAvto
         #region AddData
         private void InsertCarTypes()
         {
-            car_Types = dl.getCarTypes("");
-            int id = Convert.ToInt32(car_Types[car_Types.Count - 1].Id) + 1;
-            string type = textBox1.Text;
-            columns = new string[] { "Id", "[Car Type]" };
-            values.Add($"'{type}'");
+            try
+            {
+                car_Types = dl.getCarTypes("");
+                int id = Convert.ToInt32(car_Types[car_Types.Count - 1].Id) + 1;
+                string type = (valid.TextValid(textBox1.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Тип транспорта\"" +
+                    "\n**поле не должно содержать цифры и символы**\nПример: [Грузовой]") : textBox1.Text;
+                columns = new string[] { "Id", "[Car Type]" };
+                List<string> values = new List<string>
+                {
+                    $"'{type}'"
+                };
 
-            dm.InsertValuses("Car Type", String.Join(",", columns), String.Join(",", values), id);
-            MessageBox.Show("Новый тип успешно добавлен!");
-            Close();
+                dm.InsertValuses("Car Type", String.Join(",", columns), String.Join(",", values), id);
+                MessageBox.Show("Новый \"Тип транспорта\" успешно добавлен!");
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void InsertDrivers()
         {
-            drivers = dl.GetDrivers("");
-            int id = Convert.ToInt32(drivers.Count + 1);
-            string lastname, firstname, aftername, dateborn, worktime, currency, category;//tb
-            lastname = textBox1.Text;
-            firstname = textBox2.Text;
-            aftername = textBox3.Text;
-            dateborn = dateTimePicker1.Value.ToString();
-            worktime = textBox5.Text;
-            currency = textBox6.Text;
-            category = textBox7.Text;
-            columns = new string[] { "Id", "LastName", "FirstName", "AfterName", "DateBorn", "WorkTime", "Currency", "Category" };
-            values.Add($"'{lastname}'");
-            values.Add($"'{firstname}'");
-            values.Add($"'{aftername}'");
-            values.Add($"'{dateborn}'");
-            values.Add($"'{worktime}'");
-            values.Add($"'{currency}'");
-            values.Add($"'{category}'");
-            dm.InsertValuses("Drivers", String.Join(",", columns), String.Join(",", values), id);
-            MessageBox.Show("Новый Водитель успешно добавлен!");
-            Close();
+            try
+            {
+                drivers = dl.GetDrivers("");
+                int id = Convert.ToInt32(drivers.Count + 1);
+                string lastname, firstname, aftername, dateborn, worktime, currency, category;//tb
+                lastname = (valid.TextValid(textBox1.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Фамилия\"" +
+                    "\n**поле не должно содержать цифры и символы**\nПример: [Иванов]") : textBox1.Text;
+                firstname = (valid.TextValid(textBox2.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Имя\"" +
+                    "\n**поле не должно содержать цифры и символы**\nПример: [Иван]") : textBox2.Text;
+                aftername = (valid.TextValid(textBox3.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Отчество\"" +
+                    "\n**поле не должно содержать цифры и символы**\nПример: [Иванович]") : textBox3.Text;
+                dateborn = dateTimePicker1.Value.ToString();
+                worktime = (valid.CheckNumFields(textBox5.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Рабочее время\"" +
+                    "\n**поле должно содержать численное значение**\nПример: [8]") : textBox5.Text;
+                currency = (valid.CheckNumFields(textBox6.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Зарплата\"" +
+                    "\n**поле должно содержать численное значение**\nПример: [2000.5]") : textBox6.Text;
+                category = (valid.TextValid(textBox7.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Категория\"" +
+                    "\n**поле не должно содержать цифры и символы**\nПример: [C]") : textBox7.Text;
+                columns = new string[] { "Id", 
+                    "LastName",
+                    "FirstName",
+                    "AfterName", 
+                    "DateBorn",
+                    "WorkTime",
+                    "Currency",
+                    "Category" 
+                };
+                List<string> values = new List<string>
+                {
+                    $"'{lastname}'",
+                    $"'{firstname}'",
+                    $"'{aftername}'",
+                    $"'{dateborn}'",
+                    $"'{worktime}'",
+                    $"'{currency}'",
+                    $"'{category}'"
+                };
+                dm.InsertValuses("Drivers", String.Join(",", columns), String.Join(",", values), id);
+                MessageBox.Show("Новый \"Водитель\" успешно добавлен!");
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
         private void InsertUser()
         {
-            users = dl.GetUsers("");
-            int id = Convert.ToInt32(users.Count + 1);
-            columns = new string[] { "Id", "Email", "Pass", "Username", "UserType" };
-            string email, pass, username, usertype;
-            email = textBox1.Text;
-            pass = textBox2.Text;
-            username = textBox3.Text;
-            usertype = comboBox1.Text;
-            values.Add($"'{email}'");
-            values.Add($"'{pass}'");
-            values.Add($"'{username}'");
-            values.Add($"'{usertype}'");
-            dm.InsertValuses("Users", String.Join(",", columns), String.Join(",", values), id);
-            MessageBox.Show("Новый пользователь успешно добавлен!");
-            Close();
+            try
+            {
+                users = dl.GetUsers("");
+                int id = Convert.ToInt32(users.Count + 1);
+                columns = new string[] { "Id", "Email", "Pass", "Username", "UserType" };
+                string email, pass, username, usertype;
+                email = (valid.CheckEmail(textBox1.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Email\"" +
+                    "\n**поле должно содержать '@' и '.'**\nПример: [example@example.exp]") : textBox1.Text;
+                pass = textBox2.Text;
+                username = (valid.CheckNewUsername(textBox3.Text) == null) ? 
+                    throw new Exception("Неверный формат поля \"Имя пользователя\"" +
+                    "\n**поле не должно содержать символы**\nПример: [user123]") : textBox3.Text;
+                usertype = (valid.CheckComboBoxValue(cb1Values, comboBox1.Text) == null) ? 
+                    throw new Exception("Данного \"Типа пользователя\" не существует") : comboBox1.Text;
+                List<string> values = new List<string>
+                {
+                    $"'{email}'",
+                    $"'{pass}'",
+                    $"'{username}'",
+                    $"'{usertype}'"
+                };
+                dm.InsertValuses("Users", String.Join(",", columns), String.Join(",", values), id);
+                MessageBox.Show("Новый \"Пользователь\" успешно добавлен!");
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void InsertMarshrit()
-        {
 
-        }
-        
-        private void InsertCar()
-        {
-            cars = dl.GetCars("");
-            int id = Convert.ToInt32(users.Count + 1);
-            columns = new string[] { "Id", "Name Car", "Marks", "Car Type", "Org", "Colonna", "Date release", "Car Number", "Motor Number", "Kuzov Number", "Tech Status", "Max Speed", "Oil Marks", "Oils Lost" };
-            string name_car, marks, car_type, org, colonna, date_release, car_number, motor_number, kuzov_number, tech_status, max_speed, oil_marks, oils_lost;
-            name_car = textBox1.Text;
-            marks = textBox2.Text;
-            org = textBox3.Text;
-            car_type = comboBox1.Text;
-            colonna = checkBox1.Checked.ToString();
-            values.Add($"'{name_car}'");
-            values.Add($"'{marks}'");
-            values.Add($"'{car_type}'");
-            values.Add($"'{org}'");
-            dm.InsertValuses("Users", String.Join(",", columns), String.Join(",", values), id);
-            MessageBox.Show("Новый пользователь успешно добавлен!");
-            Close();
-        }
         #endregion
 
         private void button1_Click(object sender, EventArgs e)
@@ -180,7 +208,7 @@ namespace UchetAvto
                     case "Тип транспорта": InsertCarTypes();break;
                     case "Водители": InsertDrivers();break;
                     case "Пользователи": InsertUser();break;
-                    case "Транспорт": InsertCar();break;
+                    
                 }
         }
             catch(Exception ex)

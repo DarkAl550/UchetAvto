@@ -35,17 +35,16 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(13, 13);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(775, 283);
+            this.dataGridView1.Size = new System.Drawing.Size(817, 283);
             this.dataGridView1.TabIndex = 0;
             // 
             // Marshruts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 322);
+            this.ClientSize = new System.Drawing.Size(842, 322);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Marshruts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

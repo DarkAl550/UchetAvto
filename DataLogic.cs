@@ -22,11 +22,13 @@ namespace UchetAvto
 
         public List<DataObjects.PutLists> GetPutLists(string parameters)
         {
-            DataObjects.PutLists pl = new DataObjects.PutLists();
-            SqlDataReader getLists = SelectValues("Lists", parameters);
+            
             List<DataObjects.PutLists> lists = new List<DataObjects.PutLists>();
+            SqlDataReader getLists = SelectValues("Lists", parameters);
+           
             while (getLists.Read())
             {
+                DataObjects.PutLists pl = new DataObjects.PutLists();
                 pl.Id = getLists["Id"].ToString();
                 pl.CarId = getLists["Car"].ToString();
                 pl.DriverId = getLists["Driver"].ToString();

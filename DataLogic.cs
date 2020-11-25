@@ -7,7 +7,7 @@ namespace UchetAvto
     public class DataLogic : DataManager
     {
 
-        public bool CheckUser(string username, string email, string password, string type)
+        public static bool CheckUser(string username, string email, string password, string type)
         {
             string parametrs = $"WHERE Username LIKE '{username}' OR Email LIKE '{email}' AND Pass LIKE '{password}' AND UserType LIKE '{type}'";
             SqlDataReader getUser = SelectValues("Users", parametrs);
@@ -20,7 +20,7 @@ namespace UchetAvto
 
         }
 
-        public List<DataObjects.PutLists> GetPutLists(string parameters)
+        public static List<DataObjects.PutLists> GetPutLists(string parameters)
         {
             
             List<DataObjects.PutLists> lists = new List<DataObjects.PutLists>();
@@ -44,7 +44,7 @@ namespace UchetAvto
             return lists;
         }
 
-        public List<DataObjects.Car> GetCars(string parameters) {
+        public static List<DataObjects.Car> GetCars(string parameters) {
             
             List<DataObjects.Car> cars = new List<DataObjects.Car>();
             SqlDataReader getCars = SelectValues("Car", parameters);
@@ -71,7 +71,7 @@ namespace UchetAvto
             return cars;
         }
 
-        public List<DataObjects.Drivers> GetDrivers(string parameters)
+        public static List<DataObjects.Drivers> GetDrivers(string parameters)
         {
            
             List<DataObjects.Drivers> drivers = new List<DataObjects.Drivers>();
@@ -93,7 +93,7 @@ namespace UchetAvto
             return drivers;
         }
 
-        public List<DataObjects.Car_Type> getCarTypes(string parameters)
+        public static List<DataObjects.Car_Type> getCarTypes(string parameters)
         {
             
             List<DataObjects.Car_Type> car_types = new List<DataObjects.Car_Type>();
@@ -109,7 +109,7 @@ namespace UchetAvto
             return car_types;
         }
 
-        public List<DataObjects.Users> GetUsers(string parameters)
+        public static List<DataObjects.Users> GetUsers(string parameters)
         {
             List<DataObjects.Users> users = new List<DataObjects.Users>();
             SqlDataReader getUsers = SelectValues("Users", parameters);
@@ -127,7 +127,7 @@ namespace UchetAvto
             return users;
         }
 
-        public List<DataObjects.Marshruts> GetMarshruts(string parameters)
+        public static List<DataObjects.Marshruts> GetMarshruts(string parameters)
         {
             List<DataObjects.Marshruts> marshruts = new List<DataObjects.Marshruts>();
             SqlDataReader getMarshrut = SelectValues("Marshruts", parameters);
@@ -148,7 +148,7 @@ namespace UchetAvto
             return marshruts;
         }
 
-        public List<DataObjects.Oil_Marks> GetOilsMarks(string parameters)
+        public static List<DataObjects.Oil_Marks> GetOilsMarks(string parameters)
         {
             List<DataObjects.Oil_Marks> oil_marks = new List<DataObjects.Oil_Marks>();
             SqlDataReader getMarshrut = SelectValues("Oil Marks", parameters);

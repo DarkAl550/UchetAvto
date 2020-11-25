@@ -19,9 +19,7 @@ namespace UchetAvto
         List<DataObjects.Drivers> driver = new List<DataObjects.Drivers>();
         List<DataObjects.Marshruts> marshrut = new List<DataObjects.Marshruts>();
         List<DataObjects.PutLists> lists = new List<DataObjects.PutLists>();
-        DataLogic dl = new DataLogic();
-        DataManager dm = new DataManager();
-        Validate valid = new Validate();
+
         public NewLists()
         {
             InitializeComponent();
@@ -41,7 +39,7 @@ namespace UchetAvto
         private string[] GetCars()
         {
             
-            car = dl.GetCars("");
+            car = DataLogic.GetCars("");
             string[] cars = new string[car.Count];
             for (int i = 0; i < car.Count; i++)
             {
@@ -53,7 +51,7 @@ namespace UchetAvto
         private string[] GetDrivers()
         {
             
-            driver = dl.GetDrivers("");
+            driver = DataLogic.GetDrivers("");
             string[] drivers = new string[driver.Count];
             for (int i = 0; i < driver.Count; i++)
             {
@@ -64,7 +62,7 @@ namespace UchetAvto
         private string[] GetMarshruts()
         {
             
-            marshrut = dl.GetMarshruts("");
+            marshrut = DataLogic.GetMarshruts("");
             string[] marshruts = new string[marshrut.Count];
             for (int i = 0; i < marshrut.Count; i++)
             {
@@ -77,26 +75,26 @@ namespace UchetAvto
         {
             try
             {
-                lists = dl.GetPutLists("");
-                string carId = (valid.CheckComboBoxValue(listCars, comboBox1.Text) == null) ? 
+                lists = DataLogic.GetPutLists("");
+                string carId = (Valid.CheckComboBoxValue(listCars, comboBox1.Text) == null) ? 
                     throw new Exception($"Значения \"{comboBox1.Text}\" не существует в контексте \"Транспорт\"") 
-                    : dl.GetCars($"WHERE [Name Car] LIKE '{comboBox1.Text.Split(' ')[0]}'")[0].Id;
-                string driverId = (valid.CheckComboBoxValue(listDrivers, comboBox2.Text) == null) ? 
+                    : DataLogic.GetCars($"WHERE [Name Car] LIKE '{comboBox1.Text.Split(' ')[0]}'")[0].Id;
+                string driverId = (Valid.CheckComboBoxValue(listDrivers, comboBox2.Text) == null) ? 
                     throw new Exception($"Значения \"{comboBox2.Text}\" не существует в контексте \"Водитель\"") 
-                    : dl.GetDrivers($"WHERE [LastName] LIKE '{comboBox2.Text.Split(' ')[0]}' AND [FirstName] LIKE '{comboBox2.Text.Split(' ')[1]}'")[0].Id;
-                string marshrutId = (valid.CheckComboBoxValue(listMarshruts, comboBox3.Text) == null) ? 
+                    : DataLogic.GetDrivers($"WHERE [LastName] LIKE '{comboBox2.Text.Split(' ')[0]}' AND [FirstName] LIKE '{comboBox2.Text.Split(' ')[1]}'")[0].Id;
+                string marshrutId = (Valid.CheckComboBoxValue(listMarshruts, comboBox3.Text) == null) ? 
                     throw new Exception($"Значения \"{comboBox3.Text}\" не существует в контексте \"Маршрут\"") 
-                    : dl.GetMarshruts($"WHERE [From] LIKE '{comboBox3.Text.Split('-')[0]}' AND [To] LIKE '{comboBox3.Text.Split('-')[1]}'")[0].Id;
+                    : DataLogic.GetMarshruts($"WHERE [From] LIKE '{comboBox3.Text.Split('-')[0]}' AND [To] LIKE '{comboBox3.Text.Split('-')[1]}'")[0].Id;
                 int id = Convert.ToInt32(lists.Count + 1);
                 string date_start = dateTimePicker1.Value.ToString();
                 string date_end = dateTimePicker2.Value.ToString();
-                string start_oils = (valid.CheckNumFields(textBox1.Text) == null) ? 
+                string start_oils = (Valid.CheckNumFields(textBox1.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Начальное количество топлива\""+
                     "\n**поле может содержать только численное значение**\nПример: [120.0]") : textBox1.Text;
-                string end_oils = (valid.CheckNumFields(textBox2.Text) == null) ? 
+                string end_oils = (Valid.CheckNumFields(textBox2.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Конечное количество топлива\"" +
                     "\n**поле может содержать только численное значение**\nПример: [120.0]") : textBox2.Text;
-                string mass = (valid.CheckNumFields(textBox2.Text) == null) ? 
+                string mass = (Valid.CheckNumFields(textBox2.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Масса\"" +
                     "\n**поле может содержать только численное значение**\nПример: [20000]") : textBox3.Text;
                 string[] columns = new string[] { 
@@ -123,7 +121,7 @@ namespace UchetAvto
                 };
 
 
-                dm.InsertValuses("Lists", String.Join(",", columns), String.Join(",", values), id);
+                DataManager.InsertValuses("Lists", String.Join(",", columns), String.Join(",", values), id);
                 MessageBox.Show("Новый \"Путевой лист\" успешно добавлен!");
                 Close();
             }

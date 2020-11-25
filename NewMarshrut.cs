@@ -14,9 +14,6 @@ namespace UchetAvto
     public partial class NewMarshrut : Form
     {
         public string tab;
-        DataLogic dl = new DataLogic();
-        DataManager dm = new DataManager();
-        Validate valid = new Validate();
         List<DataObjects.Marshruts> marshruts = new List<DataObjects.Marshruts>();
 
         public NewMarshrut()
@@ -34,23 +31,23 @@ namespace UchetAvto
         {
             try
             {
-                marshruts = dl.GetMarshruts("");
+                marshruts = DataLogic.GetMarshruts("");
                 int id = Convert.ToInt32(marshruts.Count + 1);
-                string from = (valid.TextValid(textBox1.Text) == null) ? 
+                string from = (Valid.TextValid(textBox1.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Откуда\"" +
                     "\n**поле не должно содержать цифры и символы**\nПример: [Минск]") : textBox1.Text;
-                string to = (valid.TextValid(textBox2.Text) == null) ? 
+                string to = (Valid.TextValid(textBox2.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Куда\"" +
                     "\n**поле не должно содержать цифры и символы**\nПример: [Минск]") : textBox2.Text;
                 string date_start = dateTimePicker1.Value.ToString();
                 string date_end = dateTimePicker2.Value.ToString();
-                string length = (valid.CheckNumFields(textBox3.Text) == null) ? 
+                string length = (Valid.CheckNumFields(textBox3.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Длительность\"" +
                     "\n**поле должно содержать только численное значение**\nПример: [8]") : textBox3.Text;
-                string oils_lost = (valid.CheckNumFields(textBox4.Text) == null) ? 
+                string oils_lost = (Valid.CheckNumFields(textBox4.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Приблизительный расход топлива\"" +
                     "\n**поле должно содержать только численное значение**\nПример: [8.89]") : textBox4.Text;
-                string time_to_sleep = (valid.CheckTimeField(textBox5.Text) == null) ? 
+                string time_to_sleep = (Valid.CheckTimeField(textBox5.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Время на сон\"" +
                     "\n**поле должно содержать только значение времени**\nПример: [12:00]") : textBox5.Text;
                 string[] columns = new string[] {
@@ -72,7 +69,7 @@ namespace UchetAvto
                     $"'{oils_lost}'",
                     $"'{time_to_sleep}'"
                 };
-                dm.InsertValuses("Marshruts", String.Join(",", columns), String.Join(",", values), id);
+                DataManager.InsertValuses("Marshruts", String.Join(",", columns), String.Join(",", values), id);
                 MessageBox.Show("Новый \"Маршрут\" успешно добавлен!");
                 Close();
             }

@@ -7,21 +7,20 @@ namespace UchetAvto
     {
         /* !!!EDIT SERVER PATH !!! */
         //Data Source=HOME-PC\SQLEXPRESS;Initial Catalog=UchetAvto;Integrated Security=True
-        public static string connPath = "Data Source=HOME-PC\\SQLEXPRESS;Initial Catalog=UchetAvto;Integrated Security=True";//conection string
+        private static string connPath = "Data Source=HOME-PC\\SQLEXPRESS;Initial Catalog=UchetAvto;Integrated Security=True";//conection string
+        private static SqlConnection conn = new SqlConnection(connPath);
 
-        SqlConnection conn = new SqlConnection(connPath);
-
-        public void ConnOpen()
+        public static void ConnOpen()
         {
             if (conn.State == System.Data.ConnectionState.Closed) conn.Open();
         }
 
-        public void ConnClosed()
+        public static void ConnClosed()
         {
             if (conn.State == System.Data.ConnectionState.Open) conn.Close();
         }
 
-        public SqlConnection SqlConnection()
+        public static SqlConnection SqlConnection()
         { 
             return conn;
         }

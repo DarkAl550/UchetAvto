@@ -22,8 +22,7 @@ namespace UchetAvto
         #region Validating
         private bool CheckUser(string email, string password, string type)
         {
-            DataLogic dl = new DataLogic();
-            return dl.CheckUser(email, email, password, type); ;
+            return DataLogic.CheckUser(email, email, password, type); ;
         }
 
         private bool CheckEmail(string email)

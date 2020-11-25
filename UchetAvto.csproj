@@ -168,7 +168,7 @@
     <Compile Include="Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validate.cs" />
+    <Compile Include="Valid.cs" />
     <EmbeddedResource Include="CreateNew.resx">
       <DependentUpon>CreateNew.cs</DependentUpon>
     </EmbeddedResource>

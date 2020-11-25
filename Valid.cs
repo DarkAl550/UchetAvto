@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace UchetAvto
 {
-    class Validate
+    public class Valid
     {
-        public string TextValid(string text)
+        public static string TextValid(string text)
         {
             char[] words = text.ToArray();
             char[] nums = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
             char[] chars = { '~', '!', '@', '#', '$', '%', '^', '&', '?', '*', '"', '(', ')', '-', '_', '+', '=', '/', ' ', '<', '>', '.', ',', '|', '\\' };
             foreach (char w in words)
             {
-                if (nums.Contains(w)) return null;
-                if (chars.Contains(w)) return null;
+                if (nums.Contains(w) || chars.Contains(w)) return null;
             }
             if (text == "" || text == null) return null;
             return text;
         }
-        public string CheckNumFields(string field)
+        public static string CheckNumFields(string field)
         {
             try
             {
@@ -33,20 +32,20 @@ namespace UchetAvto
                 return null;
             }
         }
-        public string CheckTimeField(string time)
+        public static string CheckTimeField(string time)
         {
             char[] times = time.ToArray();
             if (times.Contains(':')) return time;
             return null;
         }
 
-        public string CheckEmail(string email)
+        public static string CheckEmail(string email)
         {
             char[] symbols = email.ToArray();
             if (symbols.Contains('@') && symbols.Contains('.')) return email;
             return null;
         }
-        public string CheckNewUsername(string username)
+        public static string CheckNewUsername(string username)
         {
             char[] words = username.ToArray();
             char[] chars = { '~', '!', '@', '#', '$', '%', '^', '&', '?', '*', '"', '(', ')', '-', '_', '+', '=', '/', ' ', '<', '>', '.', ',', '|', '\\' };
@@ -56,7 +55,7 @@ namespace UchetAvto
             }
             return username;
         }
-        public string CheckComboBoxValue(object[] allValues, string selectedValues)
+        public static string CheckComboBoxValue(object[] allValues, string selectedValues)
         {
             if (allValues.Contains(selectedValues)) return selectedValues;
             return null;

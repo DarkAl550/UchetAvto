@@ -12,13 +12,11 @@ namespace UchetAvto
 {
     public partial class Marshruts : Form
     {
-        List<DataObjects.Marshruts> marshruts = new List<DataObjects.Marshruts>();
-        DataLogic dl = new DataLogic();
-        DataManager dm = new DataManager();
+        private List<DataObjects.Marshruts> marshruts = new List<DataObjects.Marshruts>();
         public Marshruts()
         {
             InitializeComponent();
-            marshruts = dl.GetMarshruts("");
+            marshruts = DataLogic.GetMarshruts("");
         }
 
         private void Marshruts_FormClosed(object sender, FormClosedEventArgs e)

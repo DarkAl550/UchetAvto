@@ -11,8 +11,9 @@ namespace UchetAvto
 {
     public class DataManager : DatabaseManager
     {
+        
 
-        public SqlDataReader SelectValues(string table, string parametrs)
+        public static SqlDataReader SelectValues(string table, string parametrs)
         {
             ConnOpen();
             SqlCommand command = new SqlCommand($"SELECT * FROM [{table}] {parametrs} ", SqlConnection());
@@ -21,7 +22,7 @@ namespace UchetAvto
 
         }
 
-        public void InsertValuses(string table, string columns, string values, int id)
+        public static void InsertValuses(string table, string columns, string values, int id)
         {
             ConnOpen();
             string inserting = $"INSERT INTO [{table}]({columns}) VALUES(@id, {values})";

@@ -12,12 +12,12 @@ namespace UchetAvto
 {
     public partial class Transport : Form
     {
-        List<DataObjects.Car> cars = new List<DataObjects.Car>();
-        DataLogic dl = new DataLogic();
+        private List<DataObjects.Car> cars = new List<DataObjects.Car>();
+ 
         public Transport()
         {
             InitializeComponent();
-            cars = dl.GetCars("");
+            cars = DataLogic.GetCars("");
         }
 
         private void Transport_Load(object sender, EventArgs e)
@@ -41,8 +41,8 @@ namespace UchetAvto
             string[] row;
             foreach (var c in cars)
             {
-                List<DataObjects.Car_Type> car_Types = dl.getCarTypes($"WHERE Id = {c.CarTypeId}");
-                List<DataObjects.Oil_Marks> oil_marks = dl.GetOilsMarks($"WHERE Id = {c.OilMarksId}");
+                List<DataObjects.Car_Type> car_Types = DataLogic.getCarTypes($"WHERE Id = {c.CarTypeId}");
+                List<DataObjects.Oil_Marks> oil_marks = DataLogic.GetOilsMarks($"WHERE Id = {c.OilMarksId}");
                 string car_typesID = car_Types[0].CarType;
                 string colonna = (c.Colonna == "true") ? "Да" : "Нет";
                 row = new string[] { c.Id,

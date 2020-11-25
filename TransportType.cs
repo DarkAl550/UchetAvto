@@ -12,8 +12,8 @@ namespace UchetAvto
 {
     public partial class TransportType : Form
     {
-        List<DataObjects.Car_Type> car_Types = new List<DataObjects.Car_Type>();
-        DataLogic dl = new DataLogic();
+        private List<DataObjects.Car_Type> car_Types = new List<DataObjects.Car_Type>();
+
         public TransportType()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace UchetAvto
 
         private void TransportType_Load(object sender, EventArgs e)
         {
-            car_Types = dl.getCarTypes("");
+            car_Types = DataLogic.getCarTypes("");
             
             dataGridView1.ColumnCount = 2;
             dataGridView1.Columns[0].Name = "Id";

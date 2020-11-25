@@ -17,9 +17,7 @@ namespace UchetAvto
         private List<DataObjects.Car> cars = new List<DataObjects.Car>();
         private List<DataObjects.Car_Type> car_types = new List<DataObjects.Car_Type>();
         private List<DataObjects.Oil_Marks> oil_marks = new List<DataObjects.Oil_Marks>();
-        private Validate valid = new Validate();
-        private DataLogic dl = new DataLogic();
-        private DataManager dm = new DataManager();
+        
 
         public NewCar()
         {
@@ -28,7 +26,7 @@ namespace UchetAvto
 
         private string[] GetCarType()
         {
-            car_types = dl.getCarTypes("");
+            car_types = DataLogic.getCarTypes("");
             string[] cars_types = new string[car_types.Count];
             for (int i = 0; i < car_types.Count; i++)
             {
@@ -39,7 +37,7 @@ namespace UchetAvto
         }
         private string[] GetOilsMarks()
         {
-            oil_marks = dl.GetOilsMarks("");
+            oil_marks = DataLogic.GetOilsMarks("");
             string[] marks = new string[oil_marks.Count];
             for (int i = 0; i < oil_marks.Count; i++)
             {
@@ -66,35 +64,35 @@ namespace UchetAvto
         {
             try
             {
-                cars = dl.GetCars("");
-                string car_typeId = (valid.CheckComboBoxValue(listTypes, comboBox1.Text) == null) ? 
+                cars = DataLogic.GetCars("");
+                string car_typeId = (Valid.CheckComboBoxValue(listTypes, comboBox1.Text) == null) ? 
                     throw new Exception("Данного \"Типа транспорта\" не существует") 
-                    : dl.getCarTypes($"WHERE [Car Type] LIKE '{comboBox1.Text}'")[0].Id;
-                string oil_markrId = (valid.CheckComboBoxValue(listMarks, comboBox2.Text) == null) ? 
+                    : DataLogic.getCarTypes($"WHERE [Car Type] LIKE '{comboBox1.Text}'")[0].Id;
+                string oil_markrId = (Valid.CheckComboBoxValue(listMarks, comboBox2.Text) == null) ? 
                     throw new Exception("Данной \"Марки топлива\" не существует") 
-                    : dl.GetOilsMarks($"WHERE [Oil Mark] LIKE '{comboBox2.Text}'")[0].Id;
+                    : DataLogic.GetOilsMarks($"WHERE [Oil Mark] LIKE '{comboBox2.Text}'")[0].Id;
                 int id = Convert.ToInt32(cars.Count + 1);
-                string date_release = (valid.CheckNumFields(textBox3.Text) == null) ? 
+                string date_release = (Valid.CheckNumFields(textBox3.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Год изготовления\"" +
                     "\n**поле может содержать только целочисенное значение**\nПример: [1990]") : textBox3.Text;
-                string name = (valid.TextValid(textBox1.Text) == null) ? 
+                string name = (Valid.TextValid(textBox1.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Название транспорта\"" +
                     "\n**поле не должно содержать цифры и символы**\nПример: [ВАЗ]") : textBox1.Text;
                 string mark = textBox2.Text;
-                string org = (valid.TextValid(textBox4.Text) == null) ? 
+                string org = (Valid.TextValid(textBox4.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Организации\"" +
                     "\n**поле не должно содержать цифры и символы**\nПример: [КарТранспорт]") : textBox4.Text;
                 string colonna = textBox5.Text;
                 string car_number = textBox7.Text;
                 string motor_number = textBox8.Text;
                 string kuzov_number = textBox9.Text;
-                string tech_status = (valid.CheckNumFields(textBox10.Text) == null) ? 
+                string tech_status = (Valid.CheckNumFields(textBox10.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Техническое состояние\"" +
                     "\n**поле должно иметь значение от 0 до 100**\nПример: [90.5]") : textBox10.Text;
-                string max_speed = (valid.CheckNumFields(textBox11.Text) == null) ? 
+                string max_speed = (Valid.CheckNumFields(textBox11.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Максимальная скорость\"" +
                     "\n**поле может содержать только целочисенное значение**\nПример: [120]") : textBox11.Text;
-                string oils_lost = (valid.CheckNumFields(textBox13.Text) == null) ? 
+                string oils_lost = (Valid.CheckNumFields(textBox13.Text) == null) ? 
                     throw new Exception("Неверный формат поля \"Расход топлива\"" +
                     "\n**поле может содержать только численное значение**\nПример: [18.0]") : textBox13.Text;
 
@@ -130,7 +128,7 @@ namespace UchetAvto
                     $"{oil_markrId}",
                     $"{oils_lost}"
                 };
-                dm.InsertValuses("Car", String.Join(",", columns), String.Join(",", values), id);
+                DataManager.InsertValuses("Car", String.Join(",", columns), String.Join(",", values), id);
                 MessageBox.Show("Новый \"Транспорт\" успешно добавлен!");
                 Close();
             }

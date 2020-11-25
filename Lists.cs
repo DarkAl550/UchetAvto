@@ -12,13 +12,11 @@ namespace UchetAvto
 {
     public partial class Lists : Form
     {
-        List<DataObjects.PutLists> putLists = new List<DataObjects.PutLists>();
-        DataLogic dl = new DataLogic();
-        DataManager dm = new DataManager();
+        private List<DataObjects.PutLists> putLists = new List<DataObjects.PutLists>();
         public Lists()
         {
             InitializeComponent();
-            putLists = dl.GetPutLists("");
+            putLists = DataLogic.GetPutLists("");
             
         }
 
@@ -36,9 +34,9 @@ namespace UchetAvto
             dataGridView1.Columns[8].Name = "Масса груза";
             string[] row;
             foreach (var l in putLists){
-                List<DataObjects.Car> cars = dl.GetCars($"WHERE Id = {l.CarId}");
-                List<DataObjects.Drivers> drivers = dl.GetDrivers($"WHERE Id = {l.DriverId}");
-                List<DataObjects.Marshruts> marshruts = dl.GetMarshruts($"WHERE Id = {l.MarshrutId}");
+                List<DataObjects.Car> cars = DataLogic.GetCars($"WHERE Id = {l.CarId}");
+                List<DataObjects.Drivers> drivers = DataLogic.GetDrivers($"WHERE Id = {l.DriverId}");
+                List<DataObjects.Marshruts> marshruts = DataLogic.GetMarshruts($"WHERE Id = {l.MarshrutId}");
                 string carID = cars[0].Name_Car;
                 string driverID = $" {drivers[0].LastName} {drivers[0].FirstName} {drivers[0].AfterName}";
                 string marshrutID = $"{ marshruts[0].From} - {marshruts[0].To}";

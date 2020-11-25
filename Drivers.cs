@@ -14,7 +14,7 @@ namespace UchetAvto
     {
 
         List<DataObjects.Drivers> drivers = new List<DataObjects.Drivers>();
-        DataLogic dl = new DataLogic();
+       
         public Drivers()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace UchetAvto
 
         private void Drivers_Load(object sender, EventArgs e)
         {
-            drivers = dl.GetDrivers("");
+            drivers = DataLogic.GetDrivers("");
 
             dataGridView1.ColumnCount = 8;
             dataGridView1.Columns[0].Name = "Id";

@@ -12,12 +12,11 @@ namespace UchetAvto
 {
     public partial class Users : Form
     {
-        List<DataObjects.Users> users = new List<DataObjects.Users>();
-        DataLogic dl = new DataLogic();
+        private List<DataObjects.Users> users = new List<DataObjects.Users>();
         public Users()
         {
             InitializeComponent();
-            users = dl.GetUsers("");
+            users = DataLogic.GetUsers("");
         }
 
         private void Users_Load(object sender, EventArgs e)

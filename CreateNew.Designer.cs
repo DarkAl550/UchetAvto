@@ -299,7 +299,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "CreateNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Добавление";
+            this.Text = "  ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateNew_FormClosed);
             this.Load += new System.EventHandler(this.CreateNew_Load);
             this.ResumeLayout(false);
